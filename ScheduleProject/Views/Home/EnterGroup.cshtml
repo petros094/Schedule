@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "EnterGroup";
+}
+
+<h2 style="color:red;">Your Schedule</h2>
+<html>
+<head>
+    <style>
+    </style>
+    <link type="text/css" rel="stylesheet" href="~/Content/Schedule.css" />
+</head>
+<body>
+    <br>
+    <div>
+        <p3>
+            <table class="model-content animate" border="1" style="text-align:center">
+                <tr>
+                    <td class="table_header">Time</td>
+                    <td class="table_header">Monday</td>
+                    <td class="table_header">Tuesday</td>
+                    <td class="table_header">Wednesday</td>
+                    <td class="table_header">Thursday</td>
+                    <td class="table_header">Friday</td>
+                </tr>
+                <tr style="color:#fff">
+                    <td>9:30AM - 11:05AM</td>
+                    @if (ViewBag.Monday != null)
+                    {
+                        foreach (var Monday in ViewBag.Monday)
+                        {
+                            <td>@Monday.Subjects</td>
+                        }
+                    }
+                </tr>
+                <tr style="color:#fff">
+                    <td>11:15AM - 12:50AM</td>
+                    @if (ViewBag.Tuesday != null)
+                    {
+                        foreach (var Tuesday in ViewBag.Tuesday)
+                        {
+                            <td>@Tuesday.Subjects</td>
+                        }
+                    }
+                </tr>
+                <tr style="color:#fff">
+                    <td>13:10AM - 14:45AM</td>
+                    @if (ViewBag.Wednesday != null)
+                    {
+                        foreach (var Wednesday in ViewBag.Wednesday)
+                        {
+                            <td>@Wednesday.Subjects</td>
+                        }
+                    }
+                </tr>
+                <tr style="color:#fff">
+                    <td>14:55AM - 15:30AM</td>
+
+                    @if (ViewBag.Thursday != null)
+                    {
+                        foreach (var Thursday in ViewBag.Thursday)
+                        {
+                            <td>@Thursday.Subjects</td>
+                        }
+                    }
+                </tr>
+                @*<tr style="color:#fff">
+                        <td>14:55AM - 15:30AM</td>
+
+                        @if (ViewBag.Friday != null)
+                        {
+                            foreach (var Friday in ViewBag.Friday)
+                            {
+                                <td>@Friday.Subjects</td>
+                            }
+                        }
+                    </tr>*@
+            </table>
+        </p3>
+    </div>
+    <script>
+    </script>
+</body>
+</html>

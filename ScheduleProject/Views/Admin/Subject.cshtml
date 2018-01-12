@@ -1,0 +1,35 @@
+﻿@model List<ScheduleProject.Models.Entities.Subject>
+@{
+    ViewBag.Title = "AddSubject";
+
+}
+
+
+<html>
+<head>
+    <title>Schedule</title>
+    <style>
+        .btn {
+            font-size: medium;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="AddSubject" method="post">
+            <input type="text" name="SubjectName" />
+            Add Subject:<input type="submit" value="Add" class="btn" />
+            <input type="button" class="btn" value="Cancel" onclick="location.href='/Admin/Index'" />
+        </form>
+        <p>@ViewBag.text</p>
+    </div>
+    <div>
+        @foreach (var item in Model)
+        {
+            <p> @item.SubjectName</p>
+            <br />
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<html>
+<head>
+    <style type="text/css">
+    </style>
+        <link type="text/css" rel="stylesheet" href="~/Content/LoginStyle.css"/>
+</head>
+<body>
+    @*<button onclick="document.getElementById('model-wrapper').style.display='block'" style="width:200px;margin-top:200px;margin-left:160px">
+        Open</button>*@
+    <div id="model-wrapper" class="modal">
+        <form class="model-content animate" action="Login" method="post">
+
+            <div class="imgcontainer">
+                @*<span onclick="document.getElementById('model-wrapper').style.display='none'" class="close" title="Close Admin">&times;</span>*@
+                <img src="~/Images/login_icon.png" alt="Avatar" class="avatar" />
+                <h1 style="text-align:center">Administrator</h1>
+            </div>
+
+            <div class="container_input">
+                <input type="text" name="Login" />
+                <input type="password" name="Password" />
+                <button type="submit" @*style="background-color:#e46b00;"*@>Login</button>
+                <button type="button"  value="Cancel" title="Close Admin" onclick="location.href='/Home/Index'">Cencel</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="~/Scripts/LoginJS.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="~/Content/LayoutStyle.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/Footerstyle.css" />
+    <style>
+    </style>
+</head>
+<body>
+    <div class="main-navigation">
+        <ul>
+            <li class="register">
+                <a href="/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="/Admin/Index">Admin</a>
+            </li>
+            <li>
+                <a href="/Home/About">About</a>
+            </li>
+            <li>
+                <a href="/Home/Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div id="myDiv">
+        <form action="/Home/EnterGroup" method="post" id="my_Div">
+            <label>Enter Your Group:</label>
+            <input type="text" name="groupName" placeholder="Enter group number" />
+            <button type="submit">Search</button>
+        </form>
+        <div id="mydiv" class="message">
+            @ViewBag.text1
+            @ViewBag.text2
+        </div>
+    </div>
+    <script>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </script>
+    @RenderBody()
+    <div>
+        <footer>
+            <div id="footer">
+                <ul>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li>
+                        <a class="show-content" href="#">
+                            Portfolio
+                            <span class="single-col">
+                                <table cellpadding="4" cellspacing="4">
+                                    <tr><td>Extra Link 1</td></tr>
+                                    <tr><td>Extra Link 2</td></tr>
+                                </table>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="show-content" href="#">
+                            About
+                            <span>
+                                <img class="profix" src="http://placehold.it/512x512/fff/000/?text=Photo" />
+                                <h1>About</h1>
+                                <p>ilukugylul</p>
+                                <p>uyikikk</p>
+                                <p>yuikululiu</p>
+                            </span>
+                        </a>
+                    </li>
+                    @*<li><a href="#">Services</a></li>*@
+                    <li>
+                        <a class="show-content" href="#">
+                            Contact
+                            <span class="single-col">
+                                <h1>Quick Contact</h1>
+                                <form id="contactform">
+                                    <input type="text" placeholder="Your name" />
+                                    <input type="text" placeholder="Email@address.com" />
+                                    <input type="text" placeholder="Subject" />
+                                    <textarea rows="5" placeholder="Your message...."></textarea>
+                                    <input type="submit" value="Send Message" style="background:#fb0;" />
+                                </form>
+                            </span>
+                        </a>
+                        <a>&copy; @DateTime.Now.Year - My ASP.NET Application for Shedule</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

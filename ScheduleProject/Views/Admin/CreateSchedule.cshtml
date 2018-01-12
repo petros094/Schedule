@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "CreateSchedule";
+   
+}
+
+<h2>CreateShedule</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+    <style>
+        .btn {
+            font-size: medium;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="Create" method="post">
+        <p>Days Of Weeks</p>
+        <table>
+            <tr>
+                <td>Mondey:   <input type="radio" value="1" name="DayId" /></td>
+                <td> Tuesday:  <input type="radio" value="2" name="DayId" /></td>
+                <td> Wednesday:<input type="radio" value="3" name="DayId" /></td>
+                <td> Thursday: <input type="radio" value="4" name="DayId" /></td>
+                <td> Friday:   <input type="radio" value="5" name="DayId" /></td>
+            </tr>
+        </table>
+        <p>Times</p>
+        <table>
+            <tr>
+                <td>I: <input type="radio" value="1" name="TimeId" /></td>
+                <td>II:<input type="radio" value="2" name="TimeId" /></td>
+                <td>III:<input type="radio" value="3" name="TimeId" /></td>
+                <td>IV:<input type="radio" value="4" name="TimeId" /></td>
+                <td>V:<input type="radio" value="5" name="TimeId" /></td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>@Html.DropDownList("GroupId", ViewBag.Result as SelectList, "Select Group List")</td>
+                <td>@Html.DropDownList("SubjectId", ViewBag.Subject as SelectList, "Select Subject List") </td>
+                <td><input type="submit" class="btn" value="Add" /></td>
+                <td><input type="button" class="btn" value="Cancel" onclick="location.href='/Admin/Index'" /></td>
+            </tr>
+        </table>
+        <p>@ViewBag.text</p>
+        <p>@ViewBag.text1</p>
+    </form>
+</body>
+</html>
+
+
